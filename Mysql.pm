@@ -7,10 +7,17 @@ my %Connected;
 
 sub connect {
     my($self, @args) = @_;
-    my $idx = join ":", (@args) || (@{$self});
+    my $idx;
+    if ($#args == -1) { 
+	$idx = $self; 
+    } else { 
+	$idx = join (':', @args); 
+    }
     return (bless $Connected{$idx}) if $Connected{$idx};
+
 # only uncomment out the following line to see the connections in error_log 
 #   print STDERR "Pid = $$, Apache::Mysql connect to $idx\n"; 
+
     $Connected{$idx} = Mysql->Connect(@args);
     return (bless $Connected{$idx});
 }
@@ -41,7 +48,7 @@ Apache::Mysql - Initiate a persistent database connection to Mysql
 
 =head1 DESCRIPTION
 
-This module supplies a persistent database connection to Mysql. You will need to have mysqlperl installed on your system.
+This module supplies a persistent database connection to Mysql. You will need to have mysqlperl installed on your system. You should really use Apache::DBI instead of this module (this module was written when DBI::Mysql had problems, which have since been corrected).
 
 This is the first version of the first module I have ever written, so expect errors! Any feedback or suggestions are gratefully received.
 

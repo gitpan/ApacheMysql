@@ -8,7 +8,7 @@
 DESCRIPTION:
 ------------
 
-This is version 0.2 of Apache::Mysql.pm.
+This is version 0.3 of Apache::Mysql.pm. You should really use Apache::DBI - this is an old module which is no longer supported or required. 
 
 The database access the connection to the database is established. It 
 remains open for the lifetime of the httpd and supersedes the time consuming connect 
@@ -50,6 +50,6 @@ MySQL and mysqlperl by Michael (Monty) Widenius <monty@tcx.se>
 
 
 
-   Neil Jensen <njensen@habaneros.com>                       Jun 17, 1997
+   Neil Jensen <njensen@habaneros.com>                       April 26, 1998
 
 ---------------------------------------------------------------------------
