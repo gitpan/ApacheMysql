@@ -31,7 +31,8 @@ __END__
 
 =head1 NAME
 
-Apache::ApacheMYSQL - Initiate a persistent database connection to Mysql 
+Apache::Mysql - Initiate a persistent database connection to Mysql 
+
 =head1 SYNOPSIS
 
  use Apache::Mysql;
